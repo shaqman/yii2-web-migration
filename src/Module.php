@@ -16,6 +16,12 @@ use yii\console\Application;
  */
 class Module extends \yii\base\Module {
 
-    public $tableName = "migration";
+    public $migrationTableName = "migration";
+
+    public $migrationPath = "@console/migrations";
+
+    public $defaultRoute = "migrate/up";
+
+    public $initialMigrationVersion = "m000000_000000_base";
 
 }
