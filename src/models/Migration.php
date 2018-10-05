@@ -16,6 +16,7 @@ use yii\helpers\VarDumper;
 
 /**
  * @property mixed version
+ * @property int apply_time
  */
 class Migration extends ActiveRecord
 {

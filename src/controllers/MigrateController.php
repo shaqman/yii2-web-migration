@@ -29,7 +29,12 @@ class MigrateController extends Controller
 
             echo "<pre>";
             $obj = new $migration();
-            $obj->up();
+            if($obj->up() !== false) {
+                $newMigration = new \shaqman\web\migration\models\Migration();
+                $newMigration->version = $migration;
+                $newMigration->apply_time = time();
+                $newMigration->save(false);
+            }
         }
     }
 }
